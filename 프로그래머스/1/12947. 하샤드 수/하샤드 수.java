@@ -1,14 +1,10 @@
 class Solution {
-    public boolean solution(int x) {
-        int sum = 0;
-        boolean answer = true;
-        String[] array = String.valueOf(x).split("");
-        for (String result : array) {
-            sum += Integer.parseInt(result);
+    public boolean solution(int n) {
+        String str = String.valueOf(n);
+        int j = 0;
+        for (int i = 0; i < str.length(); i++) {
+            j += str.charAt(i) - '0';
         }
-        if (x % sum != 0) {
-            answer = false;
-        }
-        return answer;
+        return n % j == 0;
     }
 }
