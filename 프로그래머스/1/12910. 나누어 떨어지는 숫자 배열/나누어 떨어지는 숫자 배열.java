@@ -1,20 +1,20 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class Solution {
-    public int[] solution(int[] arr, int divisor) {
-        int[] answer = {};
-        int i = 0;
-        for (int result : arr) {
-            if (result % divisor == 0) {
-                answer = Arrays.copyOf(answer, answer.length + 1);
-                answer[answer.length - 1] = result;
-            }
-        }
-        if (answer.length == 0) {
-            answer = Arrays.copyOf(answer, answer.length + 1);
-            answer[answer.length - 1] = -1;
-        }
-        Arrays.sort(answer);
-        return answer;
-    }
+	public int[] solution(int[] arr, int divisor) {
+		List<Integer> result = new ArrayList<>();
+
+		for (int num : arr) {
+			if (num % divisor == 0)
+				result.add(num);
+		}
+
+		if (result.isEmpty())
+			return new int[] {-1};
+
+		Collections.sort(result);
+		return result.stream().mapToInt(i -> i).toArray();
+	}
 }
