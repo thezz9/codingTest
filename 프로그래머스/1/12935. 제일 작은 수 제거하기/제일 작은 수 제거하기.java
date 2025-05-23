@@ -1,21 +1,13 @@
+import java.util.Arrays;
+
 class Solution {
     public int[] solution(int[] arr) {
-        if (arr.length == 1) {
-            return new int[]{-1};
-        } else {
-            int min = Integer.MAX_VALUE;
-            for (int n : arr) {
-                min = Math.min(n, min);
-            }
+        if (arr.length == 1) return new int[]{-1};
 
-            int[] answer = new int[arr.length - 1];
-            int i = 0;
-            for (int n : arr) {
-                if (n != min) {
-                    answer[i++] = n;
-                }
-            }
-            return answer;
-        }
+        int min = Arrays.stream(arr).min().orElseThrow();
+
+        return Arrays.stream(arr)
+                .filter(i -> i != min)
+                .toArray();
     }
 }
