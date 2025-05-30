@@ -1,18 +1,15 @@
-import java.util.*;
-
 class Solution {
-    public int solution(int[][] sizes) {
-        int max = 0;
-        int min = 0;
-        for (int i = 0; i < sizes.length; i++) {
-            int[] arr = sizes[i];
-            if (max < Arrays.stream(arr).max().getAsInt()) {
-                max = Arrays.stream(arr).max().getAsInt();
-            }
-            if (min < Arrays.stream(arr).min().getAsInt()) {
-                min = Arrays.stream(arr).min().getAsInt();
-            }
-        }
-        return max * min;
-    }
+	public int solution(int[][] sizes) {
+		int width = 0;
+		int height = 0;
+		for (int[] size : sizes) {
+			int w = Math.max(size[0], size[1]);
+			int h = Math.min(size[0], size[1]);
+
+			width = Math.max(width, w);
+			height = Math.max(height, h);
+		}
+
+		return width * height;
+	}
 }
