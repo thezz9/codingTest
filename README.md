@@ -1,6 +1,3 @@
-# 코딩 테스트 풀이 모음
+# Coding Test Solutions
 
-이 레포지토리는 코딩 테스트 문제 풀이를 기록하고 자동으로 업데이트됩니다.
-
-## 💡
-### 매일 풀 수 있도록 하자!
+This repository contains solutions to coding test problems and is automatically updated.
